@@ -1,13 +1,17 @@
+// Max Maslov
+// 10/3/2024
+// SDEV301
+
 import java.util.Scanner;
 import java.util.HashMap;
 
 public class VoteResults {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        HashMap<String, Integer> voteCountMap = new HashMap<>();
-        String subject;
+        HashMap<String, Integer> voteCountMap = new HashMap<>(); // hashmap to store results
+        String subject; // string variable to store user input for the keyset
 
-        // Input subjects
+        // input subjects
         System.out.println("Enter the voting subjects (type 'done' when finished):");
         while (true) {
             System.out.print("Subject: ");
@@ -18,17 +22,17 @@ public class VoteResults {
             voteCountMap.put(subject, 0);
         }
         
-        // Input voteCountMap for each subject
+        // input votes
         for (String voteSubject : voteCountMap.keySet()) {
-            System.out.print("Enter the number of voteCountMap for " + voteSubject + ": ");
+            System.out.print("Enter the number of votes for " + voteSubject + ": ");
             int numberOfVotes = input.nextInt();
             voteCountMap.put(voteSubject, numberOfVotes);
         }
         
-        // Output the results
-        System.out.println("\nVoting Results:");
+        // print results
+        System.out.println("Voting Results:");
         for (String voteSubject : voteCountMap.keySet()) {
-            System.out.println(voteSubject + ": " + voteCountMap.get(voteSubject) + " voteCountMap");
+            System.out.println(voteSubject + ": " + voteCountMap.get(voteSubject) + " votes");
         }
         
         input.close();
